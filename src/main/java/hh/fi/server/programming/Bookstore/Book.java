@@ -1,6 +1,18 @@
 package hh.fi.server.programming.Bookstore;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
+import org.springframework.data.annotation.Id;
+
+//Book Entity
+@Entity 
 public class Book {
+	//@id is used to create an ID column for the table
+	@Id
+	//Generates automatically a unique PK for every new entity object
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private String title;
 	private String author;
 	private int year;
