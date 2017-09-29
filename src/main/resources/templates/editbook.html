@@ -7,10 +7,11 @@
 </head>
 <body>
 <div class="container-fluid">
-	<h1>Add a Book</h1>
-	
-	<form th:action="@{/savebook}" th:object="${book}" method="post">
+	<h1>Editing Book</h1>
+	<!-- in th:action we to the ID and then we need to go back to ../savebook -->
+	<form th:action="@{../savebook}" th:object="${book}" method="POST">
 		<div class="form-group">
+		
 			<label for="ftitle">Title :</label>
 			<input type="text" class="form-control" id="fname" th:field="*{title}" />
 		</div>
@@ -34,8 +35,8 @@
 						
 	
 	</form>
+	
 </div>
-	
-	
+		
 </body>
 </html>

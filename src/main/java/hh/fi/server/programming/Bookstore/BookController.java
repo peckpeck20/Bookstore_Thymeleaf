@@ -54,7 +54,15 @@ public class BookController {
 	    //@PathVariable indicates that a method parameter should be bound to a URI template variable
 	    public String deleteBook(@PathVariable("id")Long bookId,Model model){
 			repository.delete(bookId);
-	    	return "redirect:booklist";
+	    	return "redirect:booklist";	
+	    }
+	    
+	    //Edit book
+	    @RequestMapping(value="/edit{id}", method =RequestMethod.GET)
+	    public String editBook(@PathVariable("id") Long bookId,Model model){
+	    	model.addAttribute("book",repository.findOne(bookId));
+			return "editbook";
 	    	
 	    }
+	    
 }
