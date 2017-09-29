@@ -38,8 +38,8 @@ public class BookstoreApplication {
 			log.info("");
 			
 			// fetch an individual customer by ID
-			Book book = repository.findOne(1L);
-			log.info("Book found with findOne(1L):");
+			Book book = repository.findOne(3L);
+			log.info("Book found with findOne(3L):");
 			log.info("--------------------------------");
 			log.info(book.toString());
 			log.info("");
