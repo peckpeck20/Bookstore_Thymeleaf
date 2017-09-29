@@ -3,24 +3,27 @@ package hh.fi.server.programming.Bookstore;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-import org.springframework.data.annotation.Id;
 
-//Book Entity
+//JPA Book Entity - maps this class to a table named Book
 @Entity 
 public class Book {
 	//@id is used to create an ID column for the table
 	@Id
 	//Generates automatically a unique PK for every new entity object
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
 	private String title;
 	private String author;
 	private int year;
 	private int isbn;
-	private int price;
+	private double price;
 	
-	//Constructor
-	public Book(String title, String author, int year, int isbn, int price) {
+	//Constructors
+	protected Book(){}
+	
+	public Book(String title, String author, int year, int isbn, double price) {
 		super();
 		this.title = title;
 		this.author = author;
@@ -28,7 +31,7 @@ public class Book {
 		this.isbn = isbn;
 		this.price = price;
 	}
-	
+	//setter & getters
 	public String getTitle() {
 		return title;
 	}
@@ -77,13 +80,13 @@ public class Book {
 
 
 
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
 
 
-	public void setPrice(int price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
