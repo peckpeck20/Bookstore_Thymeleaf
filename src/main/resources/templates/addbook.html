@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
 	<title>Bookstore List</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+
+<!--  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div> 
+  
+   class="form-control"-->
 	<h1>Add a Book</h1>
 	
 	<form th:action="@{/savebook}" th:object="${book}" method="post">
-		  	<label for="ftitle">Title :</label>
-			<input type="text" id="fname" th:field="*{title}" />
-			<div style="clear: both; display: block; height: 10px;"></div>
+		<div class="form-group">
+			<label for="ftitle">Title :</label>
+			<input type="text" class="form-control" id="fname" th:field="*{title}" />
+		</div>
+		<div class="form-group">
 			<label for="fauthor">Author :</label>
-			<input type="text" id="fauthor" th:field="*{author}" />
-			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="text"  class="form-control" id="fauthor" th:field="*{author}" />
+		</div>
+		<div class="form-group">
 			<label for="fyear">Year :</label>
-			<input type="text" id="fyear" th:field="*{year}" />
-			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="text" class="form-control" id="fyear" th:field="*{year}" />
+		</div>
+		<div class="form-group">
 			<label for="fisbn">ISBN :</label>
-			<input type="text" id="fisbn" th:field="*{isbn}" />
-			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="text"  class="form-control" id="fisbn" th:field="*{isbn}" />
+		</div>
+		<div class="form-group">
 			<label for="fprice">Price :</label>
-			<input type="text" id="fprice" th:field="*{price}" />
-			<div style="clear: both; display: block; height: 10px;"></div>
-			<input type="submit" value="Save book"></input>
+			<input type="text" class="form-control" id="fprice" th:field="*{price}" />
+		</div>
+		<input class="btn btn-success" type="submit" value="Save book"></input>
 						
 	
 	</form>
