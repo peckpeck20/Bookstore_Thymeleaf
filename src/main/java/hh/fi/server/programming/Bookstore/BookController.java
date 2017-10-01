@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class BookController {
 	@Autowired
 	private BookRepository repository;
+	
+	@Autowired
+	private CategoryRepository crepository;
 
 
 		//GET method - URL parameters
@@ -36,6 +39,7 @@ public class BookController {
 	    @RequestMapping(value = "/addbook")
 	    public String addStudent(Model model){
 	    	model.addAttribute("book", new Book());
+	    	model.addAttribute("categories",crepository.findAll());
 	        return "addbook";
 	    }
 	    
