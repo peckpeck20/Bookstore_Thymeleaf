@@ -15,7 +15,7 @@ public class Category {
 	@Id
 	//Generates automatically a unique PK for every new entity object
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long categoryId;
+	private Long categoryid;
 	private String name;
 	
 	//Create a 1 to * relationship bet. book & category
@@ -31,12 +31,13 @@ public class Category {
 	
 	}
 	//Setters & getters 
-	public Long getCategoryId() {
-		return categoryId;
+
+	public Long getCategoryid() {
+		return categoryid;
 	}
 
-	public void setCategoryId(Long categoryId) {
-		this.categoryId = categoryId;
+	public void setCategoryid(Long categoryid) {
+		this.categoryid = categoryid;
 	}
 
 	public String getName() {
@@ -57,8 +58,9 @@ public class Category {
 
 	@Override
 	public String toString() {
-		return "Category [categoryId=" + categoryId + ", name=" + name + ", books=" + books + "]";
+		return "Category [categoryid=" + categoryid + ", name=" + name + ", books=" + books + "]";
 	}
+
 	
 }
 

@@ -31,6 +31,15 @@
 			<label for="fprice">Price :</label>
 			<input type="text" class="form-control" id="fprice" th:field="*{price}" />
 		</div>
+		<!-- Dropdown category List  -->
+		<div class="form-group">
+			<label for="fcategory">Category :</label>
+			 <select id="fcategory" th:field="*{category}" class="form-control">
+       			<option th:each="category : ${categorys}" 
+       			th:value="${category.categoryid}" 
+       			th:text="${category.name}"></option>
+    		</select>		
+		</div>
 		<input class="btn btn-success" type="submit" value="Save book"></input>
 						
 	

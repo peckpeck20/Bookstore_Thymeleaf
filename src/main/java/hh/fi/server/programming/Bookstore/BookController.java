@@ -6,8 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-//import org.springframework.web.bind.annotation.ResponseBody;
 
 
 
@@ -20,12 +18,13 @@ public class BookController {
 	@Autowired
 	private CategoryRepository crepository;
 
-
+	/*
 		//GET method - URL parameters
 		@RequestMapping("/index")
 		public String greetingRequest(@RequestParam(name="name",required=false, defaultValue="Stranger")String name){
 			return "Greetings " + name;
 		}
+	*/
 		
 		//shows all the books from the DB in a table
 	    @RequestMapping(value ="/booklist")
@@ -39,7 +38,7 @@ public class BookController {
 	    @RequestMapping(value = "/addbook")
 	    public String addStudent(Model model){
 	    	model.addAttribute("book", new Book());
-	    	model.addAttribute("categories",crepository.findAll());
+	    	model.addAttribute("categorys",crepository.findAll());
 	        return "addbook";
 	    }
 	    
