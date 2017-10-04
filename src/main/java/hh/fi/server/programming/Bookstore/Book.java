@@ -8,7 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 
-
+//testing git
 
 //JPA Book Entity - maps this class to a table named Book
 @Entity 
