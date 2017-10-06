@@ -1,4 +1,4 @@
-package hh.fi.server.programming.Bookstore;
+package hh.fi.serve.programming.Bookstore.web;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

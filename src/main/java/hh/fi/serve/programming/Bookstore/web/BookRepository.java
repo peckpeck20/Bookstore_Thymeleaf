@@ -1,4 +1,4 @@
-package hh.fi.server.programming.Bookstore;
+package hh.fi.serve.programming.Bookstore.web;
 
 
 import java.util.List;

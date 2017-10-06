@@ -1,4 +1,4 @@
-package hh.fi.server.programming.Bookstore;
+package hh.fi.serve.programming.Bookstore.web;
 
 import java.util.List;
 
@@ -28,7 +28,12 @@ public class BookController {
 			return "Greetings " + name;
 		}
 	*/
-		
+		// Show all students
+	    @RequestMapping(value="/login")
+	    public String login() {	
+	        return "login";
+	    }	
+	
 		//shows all the books from the DB in a table
 	    @RequestMapping(value ="/booklist")
 	    public String bookList(Model model) {	
@@ -67,6 +72,7 @@ public class BookController {
 	    @RequestMapping(value="/edit{id}", method =RequestMethod.GET)
 	    public String editBook(@PathVariable("id") Long bookId,Model model){
 	    	model.addAttribute("book",repository.findOne(bookId));
+	    	model.addAttribute("categorys",crepository.findAll());
 			return "editbook";
 	    	
 	    }
