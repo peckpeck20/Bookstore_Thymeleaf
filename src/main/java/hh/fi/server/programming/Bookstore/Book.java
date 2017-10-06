@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 //testing git
 
@@ -25,6 +27,12 @@ public class Book {
 	private double price;
 	
     @ManyToOne
+    /*entity relationship will
+    cause endless loop (First student is serialized and it contains
+    department which is then serialized which contains students which
+    are then serialized
+    */
+    @JsonIgnore
     @JoinColumn(name = "categoryid")
     private Category category;	
 	

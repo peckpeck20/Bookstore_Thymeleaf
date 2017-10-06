@@ -29,9 +29,10 @@ public class BookstoreApplication {
 			crepository.save(new Category("Law"));
 			//save a couple of books
 			log.info("saving books");
-			brepository.save(new Book("book1","jk",9999,12343,20.00, crepository.findByName("Law").get(0)));
-			brepository.save(new Book("book2","KK",0000,55555,25.00, crepository.findByName("Fiction").get(0)));
-			brepository.save(new Book("book3","Aa",8888,11111,34.00, crepository.findByName("Business").get(0)));
+			brepository.save(new Book("book1","Laws 101",9999,12343,20.00, crepository.findByName("Law").get(0)));
+			brepository.save(new Book("book2","IT",0000,55555,25.00, crepository.findByName("Fiction").get(0)));
+			brepository.save(new Book("book3","How to start a business",8888,11111,34.00, crepository.findByName("Business").get(0)));
+			brepository.save(new Book("book4","HTML basics",4444,00000,50.00, crepository.findByName("IT").get(0)));
 			
 			//fetch all books
 			log.info("Books found with findAll():");
